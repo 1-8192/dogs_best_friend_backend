@@ -2,15 +2,16 @@ require 'nokogiri'
 require 'open-uri'
 require 'byebug'
 
-doc = Nokogiri::HTML(open('https://www.nycacc.org/adopt/adoption-search?field_animal_id=&field_type=3&field_contact_location=All'))
+doc = Nokogiri::HTML(open('https://www.aspca.org/nyc/aspca-adoption-center/adoptable-dogs?ms=MP_PMK_GGAdoption-Tristate&initialms=MP_PMK_GGAdoption-Tristate&gclid=Cj0KCQjwzunmBRDsARIsAGrt4mtTV4Bzl60sF5AdOZOjRx0vrUDvay5tbvcaOS1RV2kppsuYaBK4o9saAg9WEALw_wcB'))
 
-doc.css('li.col-xs-12').each do |link|
+doc.css('#section-panel > div.center-wrapper > div.panel-col-first.panel-panel > div > div > div > div > div > div > div.view-content > div.views-row-odd.views-row-first.listing.contextual-links-region').each do |link|
   # set up scraping of individual dog show pages
-  showpage_link = link.children[4].children.children[0].values[0]
-  show_doc = Nokogiri::HTML(open('https://www.nycacc.org' + showpage_link))
+  showpage_link = link.children[1].children[1].values[0]
+  show_doc = Nokogiri::HTML(open('https://www.aspca.org' + showpage_link))
 
   # assign variables
-  dog_name = show_doc.css('#page > div.main-container.container-fluid.js-quickedit-main-content > div > section > div > article > div > div > div > div.col-xs-12.col-sm-8.col-lg-8.right-animal-detail.detail-desktop > h2 > span').text
+  byebug
+  dog_name = show_doc.css("#content > div.panel-2col-stacked.clearfix.panel-display > div.center-wrapper > div.panel-col-first.panel-panel > div > div.panel-pane.pane-custom.pane-2.name.details > div > div.field-items > div").text
 
     if show_doc.css('#pet-image-container > a > div').search('.animal-image-detail').map{ |n| n['style'][/url\((.+)\)/, 1] }[0]
       dog_image = show_doc.css('#pet-image-container > a > div').search('.animal-image-detail').map{ |n| n['style'][/url\((.+)\)/, 1] }[0].split('')

@@ -11,6 +11,7 @@ require 'open-uri'
 
 Shelter.destroy_all
 Dog.destroy_all
+
 #seed shelters
 Shelter.create(name: "Manhattan Animal Care Center", location: "326 East 110th Street between 1st and 2nd Aves, New York, NY 10029", contact: "(212) 788-4000")
 

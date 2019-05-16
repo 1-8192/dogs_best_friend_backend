@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :dogs, only: [:index, :show]
-      resources :users, only: [:create]
+      resources :users, only: [:create, :destroy]
+
+      post '/register', to: 'users#create'
       post '/login', to: 'auth#create'
-      get '/profile', to: 'users#profile'
+      get '/current_user', to: 'auth#current_profile'
     end
   end
 end

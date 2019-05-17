@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :dogs, only: [:index, :show]
       resources :users, only: [:create, :update, :destroy]
+      resources :shelters, only: [:index]
+      resources :payments, only: [:create]
 
       post '/register', to: 'users#create'
       post '/login', to: 'auth#create'

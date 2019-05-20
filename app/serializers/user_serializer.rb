@@ -3,4 +3,5 @@ class UserSerializer < ActiveModel::Serializer
 
   has_many :payments
   has_many :dogs, through: :payments
+
 end

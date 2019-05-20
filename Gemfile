@@ -17,6 +17,7 @@ gem 'puma', '~> 3.11'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'nokogiri', '~> 1.10.3'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

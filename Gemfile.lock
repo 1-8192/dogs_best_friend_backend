@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/stripe/stripe-ruby
+  revision: b26d57c90e8c440a3d0c13c033127f5cdd86584b
+  specs:
+    stripe (4.17.0)
+      faraday (~> 0.13)
+      net-http-persistent (~> 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -56,10 +64,13 @@ GEM
     case_transform (0.2)
       activesupport
     concurrent-ruby (1.1.5)
+    connection_pool (2.2.2)
     crass (1.0.4)
     erubi (1.8.0)
     faker (1.9.3)
       i18n (>= 0.7)
+    faraday (0.15.4)
+      multipart-post (>= 1.2, < 3)
     ffi (1.10.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -84,6 +95,9 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     msgpack (1.2.10)
+    multipart-post (2.1.1)
+    net-http-persistent (3.0.1)
+      connection_pool (~> 2.2)
     nio4r (2.3.1)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
@@ -160,6 +174,7 @@ DEPENDENCIES
   rails (~> 5.2.3)
   spring
   spring-watcher-listen (~> 2.0.0)
+  stripe!
   tzinfo-data
 
 RUBY VERSION

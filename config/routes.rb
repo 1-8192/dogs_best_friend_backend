@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :users, only: [:create, :update, :destroy]
       resources :shelters, only: [:index]
       resources :payments, only: [:create]
+      resources :charges
 
       post '/register', to: 'users#create'
       post '/login', to: 'auth#create'

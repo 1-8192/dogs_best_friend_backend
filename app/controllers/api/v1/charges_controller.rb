@@ -18,7 +18,11 @@ class Api::V1::ChargesController < ApplicationController
   :description => 'Rails Stripe customer',
   :currency => 'usd'
   )
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> master
   rescue Stripe::CardError => e
   flash[:error] = e.message
   redirect_to new_charge_path

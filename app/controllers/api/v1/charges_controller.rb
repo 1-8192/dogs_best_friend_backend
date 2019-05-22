@@ -1,3 +1,5 @@
+require 'stripe'
+
 class Api::V1::ChargesController < ApplicationController
 
   def new

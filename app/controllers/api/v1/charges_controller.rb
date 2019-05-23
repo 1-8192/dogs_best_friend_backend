@@ -1,29 +1,34 @@
 require 'stripe'
+require 'securerandom'
 
 class Api::V1::ChargesController < ApplicationController
 
-  def new
-  end
-
   def create
-  # Amount in cents
-  @amount = 500
+
+  Stripe.api_key = 'sk_test_Sh3JmNAY6uuHzkyf2Gh51gVO00W8XJk3im'
+  ip_key = SecureRandom.uuid
 
   customer = Stripe::Customer.create(
-  :email => params[:stripeEmail],
-  :source => params[:stripeToken]
+  :email => current_user.email,
+  :source => params[:token]
   )
 
   charge = Stripe::Charge.create(
   :customer => customer.id,
-  :amount => @amount,
-  :description => 'Rails Stripe customer',
-  :currency => 'usd'
+  :amount => params[:amount],
+  :description => params[:description],
+  :currency => params[:currency],
+  :idempotency_key => ip_key
   )
 
   rescue Stripe::CardError => e
-  flash[:error] = e.message
-  redirect_to new_charge_path
+    render json: { message: 'oops'}, status: :not_acceptable
+  end
+
+  private
+
+  def charge_params
+    params.require(:charge).permit(:amount, :description, :currency)
   end
 
 end

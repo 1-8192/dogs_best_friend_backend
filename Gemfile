@@ -18,6 +18,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'nokogiri', '~> 1.10.3'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'capybara'
+gem 'rspec-rails'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

@@ -55,17 +55,28 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    addressable (2.6.0)
+      public_suffix (>= 2.0.2, < 4.0)
     arel (9.0.0)
     bcrypt (3.1.12)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
     builder (3.2.3)
     byebug (11.0.1)
+    capybara (3.20.2)
+      addressable
+      mini_mime (>= 0.1.3)
+      nokogiri (~> 1.8)
+      rack (>= 1.6.0)
+      rack-test (>= 0.6.3)
+      regexp_parser (~> 1.2)
+      xpath (~> 3.2)
     case_transform (0.2)
       activesupport
     concurrent-ruby (1.1.5)
     connection_pool (2.2.2)
     crass (1.0.4)
+    diff-lcs (1.3)
     erubi (1.8.0)
     faker (1.9.3)
       i18n (>= 0.7)
@@ -102,6 +113,7 @@ GEM
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
     pg (1.1.4)
+    public_suffix (3.0.3)
     puma (3.12.1)
     rack (2.0.7)
     rack-cors (1.0.3)
@@ -135,6 +147,24 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    regexp_parser (1.5.1)
+    rspec-core (3.8.0)
+      rspec-support (~> 3.8.0)
+    rspec-expectations (3.8.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.8.0)
+    rspec-mocks (3.8.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.8.0)
+    rspec-rails (3.8.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.8.0)
+      rspec-expectations (~> 3.8.0)
+      rspec-mocks (~> 3.8.0)
+      rspec-support (~> 3.8.0)
+    rspec-support (3.8.0)
     ruby_dep (1.5.0)
     spring (2.0.2)
       activesupport (>= 4.2)
@@ -155,6 +185,8 @@ GEM
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
+    xpath (3.2.0)
+      nokogiri (~> 1.8)
 
 PLATFORMS
   ruby
@@ -164,6 +196,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   byebug
+  capybara
   faker (~> 1.9)
   jwt (~> 2.1)
   listen (>= 3.0.5, < 3.2)
@@ -172,6 +205,7 @@ DEPENDENCIES
   puma (~> 3.11)
   rack-cors
   rails (~> 5.2.3)
+  rspec-rails
   spring
   spring-watcher-listen (~> 2.0.0)
   stripe!

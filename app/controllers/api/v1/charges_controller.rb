@@ -8,7 +8,7 @@ class Api::V1::ChargesController < ApplicationController
 
   def create
 
-  Stripe.api_key = 'sk_test_Sh3JmNAY6uuHzkyf2Gh51gVO00W8XJk3im'
+  Stripe.api_key = Rails.application.credentials.stripe_secret_key
   ip_key = SecureRandom.uuid
 
     begin

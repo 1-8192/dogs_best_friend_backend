@@ -7,4 +7,8 @@ class Dog < ApplicationRecord
     new_array = self.payments.map { |payment| payment.amount.to_f}
     return new_array.reduce(0, :+)
   end
+
+  def self.order_of_need
+   return self.all.sort_by { |dog| dog.total_payments }
+  end
 end

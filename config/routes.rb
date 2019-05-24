@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :payments, only: [:create]
       resources :charges, only: [:new, :create]
 
+      get '/need', to: 'dogs#sorted_index'
       post '/register', to: 'users#create'
       post '/login', to: 'auth#create'
       get '/current_user', to: 'auth#current_profile'

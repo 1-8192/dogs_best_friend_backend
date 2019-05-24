@@ -3,7 +3,7 @@ class Api::V1::PaymentsController < ApplicationController
   def create
     @payment = Payment.create(payment_params)
     if @payment.valid?
-      render json: {user: UserSerializer.new(@payment.user), dog: DogSerializer.new(@payment.dog)}, status: :accepted
+      render json: {user: UserSerializer.new(@payment.user), total_payments: @payment.user.total_payments, dog: DogSerializer.new(@payment.dog)}, status: :accepted
     else
       render json: { message: "error processing payment"}, status: :not_acceptable
     end

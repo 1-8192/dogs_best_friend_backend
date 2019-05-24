@@ -11,35 +11,29 @@ class Api::V1::ChargesController < ApplicationController
   Stripe.api_key = 'sk_test_Sh3JmNAY6uuHzkyf2Gh51gVO00W8XJk3im'
   ip_key = SecureRandom.uuid
 
-  begin
+    begin
 
-    customer = Stripe::Customer.create(
-    :email => current_user.email,
-    :source => params[:charge][:token]
-    )
+      customer = Stripe::Customer.create(
+      :email => current_user.email,
+      :source => params[:charge][:token]
+      )
 
-    puts customer
+      puts customer
 
-    charge = Stripe::Charge.create({
-    :customer => customer.id,
-    :amount => params[:charge][:amount],
-    :description => params[:charge][:description],
-    :currency => params[:charge][:currency],
-    }, {
-    :idempotency_key => ip_key
-    })
+      charge = Stripe::Charge.create({
+      :customer => customer.id,
+      :amount => params[:charge][:amount],
+      :description => params[:charge][:description],
+      :currency => params[:charge][:currency],
+      }, {
+      :idempotency_key => ip_key
+      })
 
-    puts charge
+      puts charge
 
-  rescue Stripe::CardError => e
-    render json: { message: 'oops'}, status: :not_acceptable
+    rescue Stripe::CardError => e
+      render json: { message: 'oops'}, status: :not_acceptable
+    end
   end
-end
-
-  private
-
-  # def charge_params
-  #   params.require(:charge).permit(:amount, :currency, :description, :chargeToken)
-  # end
 
 end

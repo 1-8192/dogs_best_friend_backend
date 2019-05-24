@@ -2,7 +2,7 @@ class Api::V1::UsersController < ApplicationController
   skip_before_action :authorized, only: [:create]
 
   def profile
-    render json: { user: UserSerializer.new(current_user) }, status: :accepted
+    render json: { user: UserSerializer.new(current_user), total_payments: current_user.total_payments }, status: :accepted
   end
 
   def create
@@ -18,7 +18,7 @@ class Api::V1::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    render json: @user
+    render json: { user: UserSerializer.new(@user), total_payments: @user.total_payments }, status: :accepted
   end
 
   def destroy

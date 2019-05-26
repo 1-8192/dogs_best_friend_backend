@@ -1,5 +1,5 @@
 class DogSerializer < ActiveModel::Serializer
-  attributes :id, :name, :image_url, :chip_id, :sex, :breed, :age, :is_vaccinated, :at_risk, :shelter_id
+  attributes :id, :name, :image_url, :chip_id, :sex, :breed, :age, :is_vaccinated, :at_risk, :shelter_id, :description
 
   belongs_to :shelter
   has_many :payments

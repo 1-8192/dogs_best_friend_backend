@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_15_213600) do
+ActiveRecord::Schema.define(version: 2019_05_26_212519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_05_15_213600) do
     t.bigint "shelter_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "description"
     t.index ["shelter_id"], name: "index_dogs_on_shelter_id"
   end
 
@@ -52,7 +53,6 @@ ActiveRecord::Schema.define(version: 2019_05_15_213600) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
-    t.string "payment_info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"

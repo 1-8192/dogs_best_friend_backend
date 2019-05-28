@@ -117,7 +117,7 @@ doc_2.css('li.col-xs-12').each do |link|
   )
 end
 
-doc_3 = Nokogiri::HTML(open('https://www.nycacc.org/adopt/adoption-search?field_animal_id=&field_type=3&field_contact_location=All&page=1'))
+doc_3 = Nokogiri::HTML(open('https://www.nycacc.org/adopt/adoption-search?field_animal_id=&field_type=3&field_contact_location=All&page=2'))
 
 doc_3.css('li.col-xs-12').each do |link|
   # set up scraping of individual dog show pages

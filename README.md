@@ -10,8 +10,9 @@ Rails API backend for Dog's Best Friend. Adopting or fostering a dog is a substa
 
 1. To run locally, please copy down the repo to your machine.
 2. `bundle install` the gems on your machine
-3. Make sure you have the frontend as well (https://github.com/1-8192/dogs-best-friend)
-4. Fire it up with 'rails s'
+3. run `rails db:migrate` and `rails db:seed`
+4. Make sure you have the frontend as well (https://github.com/1-8192/dogs-best-friend)
+5. Fire it up with 'rails s'
 
 #Authors
 

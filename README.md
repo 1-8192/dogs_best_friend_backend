@@ -1,24 +1,22 @@
-# README
+#Dog's Best Friend (Backend)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails API backend for Dog's Best Friend. Adopting or fostering a dog is a substantial commitment, and not one everybody can afford. But NYC shelter dogs still need our help! Dog's Best Friend lets the user browse real NYC shelter dogs and donate to their cause. This app was built with React/Redux and a Rails API backend. Payments are powered through Stripe in a test environment, please do not use any real payment info. The app is currently deployed through Heroku at https://dogsbestfriend.herokuapp.com/
 
-Things you may want to cover:
+#Version
 
-* Ruby version
+0.1.0
 
-* System dependencies
+#Install Guide
 
-* Configuration
+1. To run locally, please copy down the repo to your machine.
+2. `bundle install` the gems on your machine
+3. Make sure you have the frontend as well (https://github.com/1-8192/dogs-best-friend)
+4. Fire it up with 'rails s'
 
-* Database creation
+#Authors
 
-* Database initialization
+Alessandro Allegranzi (1-8192)
 
-* How to run the test suite
+#Acknowledgments
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Libraries/frameworks used for this project include Bulma UI, React, Redux, and Rails in the backend.

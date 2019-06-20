@@ -1,11 +1,11 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe User, type: :model do
   let(:attributes) do
     {
       username: "Timmy",
       email: "timmy@test.com",
-      payment_info: "11111111"
+      password: "test"
     }
   end
 

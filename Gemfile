@@ -16,7 +16,7 @@ gem 'puma', '~> 3.11'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-gem 'nokogiri', '~> 1.10.3'
+gem 'nokogiri', '~> 1.10.10'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'capybara'
 gem 'rspec-rails'
